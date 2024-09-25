@@ -4,10 +4,7 @@ body {
   margin: 0;
 }
 
-a {
-  color: #551a8b;
-  text-decoration: none;
-}
+
 
 * {
   box-sizing: border-box;
@@ -17,4 +14,12 @@ a {
 
 li {
   list-style: none;
+}
+
+h2, p {
+  color: #551a8b;
+}
+
+p {
+  font-size: 20px;
 }
