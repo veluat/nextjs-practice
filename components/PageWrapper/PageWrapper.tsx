@@ -24,7 +24,7 @@ const MainBlock = styled.div`
   row-gap: 15px;
   column-gap: 15px;
   position: relative;
-  padding: 4rem 0;
+  padding: 32px 0;
   max-width: 1280px;
   margin: 0 auto;
 

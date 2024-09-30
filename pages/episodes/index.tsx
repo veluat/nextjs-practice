@@ -1,8 +1,8 @@
-import {API} from '../../assets/api/api'
-import {EpisodeType, ResponseType} from '../../assets/api/rick-and-morty-api'
-import {PageWrapper} from '../../components/PageWrapper/PageWrapper'
-import {Header} from '../../components/Header/Header'
-import {Card} from '../../components/Card/Card'
+import {API} from 'assets/api/api'
+import {EpisodeType, ResponseType} from 'assets/api/rick-and-morty-api'
+import {PageWrapper} from 'components/PageWrapper/PageWrapper'
+import {Card} from 'components/Card/Card'
+import {getLayout} from 'components/Layout/BaseLayout/BaseLayout'
 
 export const getServerSideProps = async () => {
   const episodes = await API.rickAndMorty.getEpisodes()
@@ -26,13 +26,13 @@ const Episodes = (props: Props) => {
   const {episodes} = props
   const episodesList = episodes.results.map(episode => (
     <Card key={episode.id} name={episode.name}/>
-      ))
-      return (
-      <PageWrapper>
-        <Header/>
-        {episodesList}
-      </PageWrapper>
-      )
-      }
+  ))
+  return (
+    <PageWrapper>
+      {episodesList}
+    </PageWrapper>
+  )
+}
 
-      export default Episodes
+Episodes.getLayout = getLayout
+export default Episodes

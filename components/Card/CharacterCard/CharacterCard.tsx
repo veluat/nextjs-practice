@@ -5,7 +5,8 @@ import Link from "next/link";
 import aliveStatus from "public/statuses/alive.png";
 import deadStatus from "public/statuses/dead.png";
 import unknownStatus from "public/statuses/unknown.png";
-import {CharacterType} from '../../../assets/api/rick-and-morty-api';
+import {CharacterType} from 'assets/api/rick-and-morty-api';
+import {Status} from './Status/Status'
 
 const statusImages = {
   Alive: aliveStatus,
@@ -25,10 +26,12 @@ export const CharacterCard = (props: PropsType) => {
       <Link href={`/characters/${id}`}>
         <ImageBlock src={image} alt={name} width={300} height={300} priority />
       </Link>
+      <Status status={status} src={statusImages[status]}/>
     </Card>
   );
 };
 
 const ImageBlock = styled(Image)`
-  object-fit: cover;
+    object-fit: cover;
+    margin: 5px 0;
 `;

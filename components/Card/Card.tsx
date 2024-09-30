@@ -26,8 +26,8 @@ const CardBlock = styled.div`
 `;
 
 const Name = styled.div`
-  font-weight: 600;
-  font-size: 28px;
+    font-weight: 600;
+    font-size: 28px;
     text-align: center;
     color: #551a8b;
     margin-bottom: 5px;
