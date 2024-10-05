@@ -20,9 +20,12 @@ export const Header = ({showLogo}: HeaderProps) => {
         <Image src='/logo.png' alt='Rick and Morty Logo' width={178} height={55} priority/>
       )}
       <LinkContainer>
+        <LinkBlock title='Login'/>
         <LinkBlock title='Characters'/>
         <LinkBlock title='Locations'/>
         <LinkBlock title='Episodes'/>
+        <LinkBlock title='Test'/>
+        <LinkBlock title='Private'/>
       </LinkContainer>
     </Navbar>
   )
