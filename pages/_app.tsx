@@ -6,6 +6,7 @@ import {Hydrate, QueryClientProvider} from '@tanstack/react-query'
 import {useLoader} from 'assets/hooks/useLoader'
 import 'styles/nprogress.css'
 import 'styles/globals.css'
+import {AuthProvider} from 'assets/context/AuthContext'
 
 export type NextPageWithLayout<P = {}> = NextPage<P> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -24,8 +25,10 @@ export default function App({Component, pageProps}: AppPropsWithLayout) {
 
   return getLayout(
     <QueryClientProvider client={queryClient}>
-      <Hydrate state={pageProps.dehydrateState}>
-        <Component {...pageProps} />
-      </Hydrate>
+      <AuthProvider>
+        <Hydrate state={pageProps.dehydrateState}>
+          <Component {...pageProps} />
+        </Hydrate>
+      </AuthProvider>
     </QueryClientProvider>)
 }
