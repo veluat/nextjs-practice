@@ -6,7 +6,7 @@ import {getLayout} from 'components/Layout/BaseLayout/BaseLayout'
 const Home: NextPageWithLayout = () => (
   <PageWrapper>
     <Image
-      src='/image.png'
+      src='/image.webp'
       alt='rik.js Logo'
       width={600}
       height={600}
@@ -15,5 +15,5 @@ const Home: NextPageWithLayout = () => (
   </PageWrapper>
 )
 
-Home.getLayout = (page) => getLayout(page, true);
+Home.getLayout = (page) => getLayout(page, true)
 export default Home
