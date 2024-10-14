@@ -6,7 +6,7 @@ import {GetStaticPaths, GetStaticProps} from 'next'
 import {useRouter} from 'next/router'
 import {Button} from 'components/Button/Button'
 import styled from 'styled-components'
-import {getLayout} from '../../components/Layout/BaseLayout/BaseLayout'
+import {getLayout} from 'components/Layout/BaseLayout/BaseLayout'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const {results} = await API.rickAndMorty.getCharacters()
