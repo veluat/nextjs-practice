@@ -1,9 +1,8 @@
-import {PropsWithChildren} from 'react'
 import {Header} from '../../Header/Header'
 import styled from 'styled-components'
-import {NextPage} from 'next'
+import React from 'react'
 
-export const PagesLayout: NextPage<PropsWithChildren> = (props) => {
+export const PagesLayout: React.FC<React.PropsWithChildren<{}>> = (props) => {
   const {children} = props
   return (
     <Container>

@@ -1,21 +1,22 @@
-import {NextPage} from 'next'
-import {PropsWithChildren, ReactElement} from 'react'
-import {PagesLayout} from '../PagesLayout/PagesLayout'
+import { NextPage } from 'next';
+import { PropsWithChildren } from 'react';
 import {MainLayout} from '../MainLayout/MainLayout'
+import {PagesLayout} from '../PagesLayout/PagesLayout'
 
 interface BaseLayoutProps extends PropsWithChildren {
   isHomePage: boolean;
 }
 
-export const BaseLayout: NextPage<BaseLayoutProps> = (props) => {
-  const {children, isHomePage} = props
+const BaseLayout: NextPage<BaseLayoutProps> = ({ children, isHomePage }) => {
   return isHomePage ? (
     <MainLayout>{children}</MainLayout>
   ) : (
     <PagesLayout>{children}</PagesLayout>
-  )
-}
+  );
+};
 
-export function getLayout(page: ReactElement, isHomePage: boolean) {
-  return <BaseLayout isHomePage={isHomePage}>{page}</BaseLayout>
-}
+export const getLayout = (page: React.ReactElement, isHomePage: boolean) => {
+  return <BaseLayout isHomePage={isHomePage}>{page}</BaseLayout>;
+};
+
+export default BaseLayout;
