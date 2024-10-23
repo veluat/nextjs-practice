@@ -1,22 +1,24 @@
 import Link from 'next/link'
 import styled from 'styled-components'
-import {useRouter} from 'next/router'
+import { useRouter } from 'next/router'
 
 type PropsType = {
   title: string;
 };
 
 export const LinkBlock = (props: PropsType) => {
-  const {title} = props
+  const { title } = props
   const router = useRouter()
 
   const isActive = router.pathname === `/${title.toLowerCase()}`
 
   return (
     <LinkWrapper>
-      <StyledLink href={`/${title.toLowerCase()}`} passHref className={isActive ? 'active' : ''}>
-        {title} →
-      </StyledLink>
+      <Link href={`/${title.toLowerCase()}`} passHref>
+        <StyledLink className={isActive ? 'active' : ''}>
+          {title} →
+        </StyledLink>
+      </Link>
     </LinkWrapper>
   )
 }
@@ -31,7 +33,7 @@ const LinkWrapper = styled.div`
     }
 `
 
-const StyledLink = styled(Link)<{ active?: boolean }>`
+const StyledLink = styled.a`
     position: relative;
     text-decoration: none;
     font-weight: 600;
@@ -64,7 +66,9 @@ const StyledLink = styled(Link)<{ active?: boolean }>`
         background-color: #fa52d3;
     }
 
-    &:hover, &:focus, &:active {
+    &:hover,
+    &:focus,
+    &:active {
         color: #fa52d3;
     }
 
