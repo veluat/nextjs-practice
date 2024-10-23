@@ -24,14 +24,19 @@ export const CharacterCard = (props: PropsType) => {
   return (
     <Card name={name}>
       <Link href={`/characters/${id}`}>
-        <ImageBlock src={image} alt={name} width={300} height={300} priority/>
+        <ImageBlock>
+          <Image src={image} alt={name} width={300} height={300} priority />
+        </ImageBlock>
       </Link>
       <Status status={status} src={statusImages[status]}/>
     </Card>
   )
 }
 
-const ImageBlock = styled(Image)`
-    object-fit: cover;
+const ImageBlock = styled.div`
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
     margin: 5px 0;
+    position: relative;
 `
